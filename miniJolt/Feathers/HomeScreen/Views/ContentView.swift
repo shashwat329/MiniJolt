@@ -253,6 +253,7 @@ struct ContentView: View {
         )
         .onChange(of: blocker.selection) { oldValue, newValue in
             blocker.updateSelection(newValue)
+            blocker.isBlocking = true
         }
         .task {
             if !blocker.isAuthorized {
