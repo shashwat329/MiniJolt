@@ -187,7 +187,6 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                                 .cornerRadius(12)
                             }
-                            .padding(.horizontal)
                         }
                         // Clear Selection Button
                         Button(action: {
@@ -254,7 +253,6 @@ struct ContentView: View {
         )
         .onChange(of: blocker.selection) { oldValue, newValue in
             blocker.updateSelection(newValue)
-            blocker.isBlocking = true
         }
         .task {
             if !blocker.isAuthorized {
